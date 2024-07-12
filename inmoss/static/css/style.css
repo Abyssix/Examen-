@@ -1,0 +1,247 @@
+
+/* Fondo */
+body{
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Resoluciones */
+
+@media(max-width: 991px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+    .manejo-img{
+        width: 200px;
+    }
+}
+
+@media(min-width: 600px){
+    .manejo-img{
+        width: 200px;
+        border-radius: 50%;
+    }
+}
+
+@media(min-width: 1408px){
+    .manejo-img{
+        width: 200px;
+        top: 23%;
+        right: 90%;
+    }
+}
+
+@keyframes moveup {
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.promo{
+    width: 100%;
+    padding: 16px 17%;
+    overflow: hidden;
+}
+.boton{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #4870df,#306ad7);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+/* Carousel */
+.carouselll {
+    margin-top: 250px;
+    height: 80vh; /* Ajusta el valor según tus necesidades */
+}
+
+.blurimg {
+    filter: blur(5px);
+}
+
+.carousel-item {
+    height: 80vh;
+    min-height: 300px;
+}
+
+.carousel-caption {
+    bottom: 200px;
+    z-index: 2;
+}
+
+.carousel-caption h3 {
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 3px black;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.9;
+    text-shadow: 2px 2px 3px black;
+}
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Contenedor */
+.contenedor{
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.contenedor h1{
+    font-size: 70px;
+    color: #202020;
+}
+
+.contenedor p{
+    margin: 10px 0 30px;
+    color: #242424;
+}
+
+.contenedor boton{
+    padding: 15px 80px;
+    font-size: 16px;
+}
+
+.boton:hover{
+    border-top-right-radius: 30px;
+}
+
+.manejo-img{
+    width: 500px;
+    position: absolute;
+    bottom: 0;
+    top: 23%;
+    right: 15%;
+}
+.anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+/* Calificaciones */
+#calificaciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.calificaciones-titulo{
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calificaciones-titulo h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #0044ffc5;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.calificaciones-titulo span{
+    font-size: 1.3rem;
+    color: #252525;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.container-box-calificadores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.calificador-box{
+    width: 500px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.perfil-imagen{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.perfil-imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+}
+
+.nombre-perfil{
+    display:flex;
+    flex-direction: column;
+}
+
+.nombre-perfil strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.nombre-perfil span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+
+.estrellas{
+    color: #f9d71c;
+}
+
+.box-posicion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.comentario-perfil p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}

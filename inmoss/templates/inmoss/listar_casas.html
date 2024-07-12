@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Listado de Casas</h2>
+    <a href="{% url 'crear_casa' %}" class="btn btn-primary mb-3">Agregar Casa</a>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for casa in casas %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ casa.imagen.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ casa.ubicacion }}</h5>
+                    <p class="card-text">${{ casa.precio }}</p>
+                    <p class="card-text">{{ casa.disponibilidad }}</p>
+                    <a href="{% url 'editar_casa' casa.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'eliminar_casa' casa.id %}" class="btn btn-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,229 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/00f676199b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="imagenes\OIG2.P72FZssQawN49sSZX-removebg-preview.png">
+    <title>InmoArriendos</title>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container">
+      <!-- Logo -->
+      <img src='{% static "img/logo.png" %}' alt="Logo" width="36" height="40" class="d-inline-block align-text-top">
+      <a class="navbar-brand text-dark" href="{% url 'index' %} ">
+        InmoArriendos</a>
+      <!-- Button -->
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 2 Navbar -->
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+        <!-- 3 Navbar -->
+        <div class="offcanvas-header text-dark border-bottom">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">InmoArriendos</h5>
+          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-6">
+          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark" href="{% url 'servicios' %}">Servicios</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark" href="#">Contactanos</a>
+            </li>
+          </ul>
+          <!-- Login y Registro -->
+          {% if user.is_authenticated %}
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                <h5>{{user.username}}</h5>
+                <a href="{% url 'logoutt' %}" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: #1071cc;">Cerrar sesion</a>
+            </div>
+          {% else %}
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                <a href="{% url 'login' %}" class="text-dark">Login</a>
+                <a href="{% url 'register' %}" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: #1071cc;">Registrarse</a>
+
+            </div>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="promo">
+    <div class="contenedor">
+      <h1 class="animacion">Alquila y <br>vive el sueño</h1>
+      <p>¡Bienvenido a nuestro sitio de arriendo de casas! Aquí encontrarás el hogar de tus sueños, donde cada pared cuenta una historia y cada habitación te invita a crear recuerdos inolvidables. Nuestro objetivo es brindarte la experiencia de vida que siempre has deseado, en un lugar que puedas llamar hogar.</p>
+      <a href="#" class="boton anim">Ver más propiedades</a>
+     </div>
+     <img src='{% static "img/prototipo.png" %}' class="manejo-img">  
+  </div>
+  
+<div class="carouselll">
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src='{% static "img/casa1.jpg" %}' alt="Los Angeles" class="d-block blurimg" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Arriendos de Lujo</h3>
+        <p>Vive el sueño de cada persona, arrienda la casa de lujo economica y buen servicio!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src='{% static "img/casa4.jpg" %}' alt="Chicago" class="d-block blurimg" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Precios Bajos</h3>
+        <p>Traemos los mejores precios para ti visita nuestra sección de servicios!</p>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src='{% static "img/casa3.jpg" %}' alt="New York" class="d-block blurimg" style="width:100%">
+      <div class="carousel-caption">
+        <h3>Arriendo Online</h3>
+        <p>Sabias que puedes arrendar desde nuestra pagina? Arrienda ya!</p>
+      </div>  
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+</div>
+
+<!-- Calificaciones -->
+<section id="calificaciones">
+
+    <div class="calificaciones-titulo">
+      <span>Comentarios</span>
+        <h1>Clientes</h1>
+    </div>
+
+    <div class="container-box-calificadores">
+      <div class="calificador-box">
+        <div class="box-posicion">
+            <div class="perfil">
+
+              <div class="perfil-imagen">
+                <img src='{% static "img/elon.jpg" %}'>
+              </div>
+
+              <div class="nombre-perfil">
+                  <strong>Elon Musk</strong>
+                  <span>@ElonMusk</span>
+              </div>
+
+            </div>
+
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="comentario-perfil">
+          <p>Mi experiencia al alquilar esta casa fue simplemente maravillosa. Desde el momento en que llegamos, nos sentimos como en nuestro propio hogar. La casa estaba impecablemente limpia y bien cuidada, con todas las comodidades que necesitábamos para disfrutar de nuestras vacaciones.</p>
+        </div>
+      </div>
+
+      <div class="calificador-box">
+        <div class="box-posicion">
+            <div class="perfil">
+
+              <div class="perfil-imagen">
+                <img src='{% static "img/weeknd.jpg" %}'>
+              </div>
+
+              <div class="nombre-perfil">
+                  <strong>Abel Makkonen</strong>
+                  <span>@theweeknd</span>
+              </div>
+
+            </div>
+
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="comentario-perfil">
+          <p>¡Excelente experiencia! La casa superó mis expectativas en todos los sentidos. Estaba impecablemente limpia y muy bien equipada, con todas las comodidades necesarias para una estancia confortable. La ubicación era perfecta, cerca de tiendas, restaurantes y parques.</p>
+        </div>
+      </div>
+      <div class="calificador-box">
+        <div class="box-posicion">
+            <div class="perfil">
+
+              <div class="perfil-imagen">
+                <img src='{% static "img/duoc.png" %}'>
+              </div>
+
+              <div class="nombre-perfil">
+                  <strong>Instituto DuocUC</strong>
+                  <span>@DuocUC</span>
+              </div>
+
+            </div>
+
+            <div class="estrellas">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="comentario-perfil">
+          <p>Como institución educativa, arrendamos esta casa para alojar a nuestros estudiantes y no podríamos estar más satisfechos. La casa estaba en excelentes condiciones, bien equipada y brindaba un ambiente seguro y cómodo para los alumnos.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
+<footer class="bg-body-tertiary text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="#">Estudiante: Juan Paillán y Nicolas Saez - DuocUC, sede Nacimiento</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body>
+</html>
